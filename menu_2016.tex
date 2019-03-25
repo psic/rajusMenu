@@ -1,0 +1,195 @@
+%\documentclass[12pt,a4paper]{article}
+\documentclass[17pt,a4paper]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage[leqno]{amsmath}
+%\usepackage[margin=2cm]{geometry}
+\usepackage[textwidth=18.5cm,centering]{geometry}
+%\usepackage{geometry}
+\usepackage[charter]{mathdesign}
+\usepackage{graphics}
+\usepackage[svgnames]{xcolor}
+\usepackage{psvectorian}
+\usepackage{background}
+\usepackage{pstricks}
+\usepackage{eurosym}
+\usepackage{tgschola}
+\usepackage[T1]{fontenc}
+
+\geometry{top=1cm, bottom=1cm}
+
+\SetBgColor{Black}
+\SetBgAngle{0}
+\SetBgScale{1}
+\SetBgOpacity{1}
+\SetBgContents{%
+%\begin{pspicture}(-10,-20)
+\begin{pspicture}(\paperwidth, \paperheight)
+\renewcommand*{\psvectorianDefaultColor}{black}%
+%haut+bas
+%\rput[tl](-3,5){\psvectorian[width=6cm]{71}}
+%\rput[bl](-3,-5){\psvectorian[width=6cm,flip]{71}}
+%coins
+\rput[tl](1,28.5){\psvectorian[opacity=1,width=2cm]{37}}
+\rput[tr](20.25,28.5){\psvectorian[opacity=1,width=2cm,mirror]{37}}
+
+%\rput[tl](8,29){\Huge \textcolor{Blue}{Le Bar à Jus}}
+%\psline[linewidth=0.05,linecolor=lightgray](7.5,28)(13,28)
+\rput[bl](1,1){\psvectorian[opacity=1,width=2cm,flip]{37}}
+\rput[br](20.25,1){\psvectorian[opacity=1,width=2cm,flip,mirror]{37}}
+% cotes 17.15
+\rput[bl]{90}(1.25,5.5){\psvectorian[opacity=1,width=18cm,height=0.4cm]{88}}
+\rput[br]{-90}(20,5.5){\psvectorian[opacity=1,width=18cm,height=0.4cm]{88}}
+\rput(10.75,1){\psvectorian[opacity=1,width=1.6cm]{116}}\\
+%texte+soulignement+chapeau
+\end{pspicture}%
+}
+
+% colorize text
+\newcommand*\ColText[1]{
+  \noindent
+  \textbf{#1}
+}
+
+\renewcommand{\arraystretch}{0.7}
+\setlength{\tabcolsep}{0.1cm}
+
+% a tabular* for each food group
+\newenvironment{Group}[4]
+{\noindent\begin{tabular*}{\textwidth}{@{}p{.7\linewidth}rcr}
+	{\hspace*{3.5cm}\large\selectfont\ColText{#1}}\smallskip & #2 & #3 & #4 \vspace{0.9cm}
+  }
+  {\end{tabular*}}
+
+% to format each entry
+\newcommand*\Entry[4]{%
+  \hspace*{8mm}\sffamily\large #1 \dotfill & #2 & #3 & #4 \hspace*{3mm}\vspace{0.1cm}}
+
+
+ % to format each entry
+\newcommand*\Entryii[4]{%
+   \hspace*{8mm}\sffamily\large #1 \dotfill & #2 & #3 & #4 \hspace*{3mm}\vspace{0.2cm}}
+
+
+% to format each subentry
+\newcommand*\Expl[1]{%
+  \hspace*{15mm}\small #1 \vspace{0.2cm} }
+
+
+
+
+
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{center}
+\rput(0,0.6){\Huge{\textbf{Le Bar à Jus}}}
+\end{center}
+%\begin{center}
+ % \Huge{\textbf{Le Bar à Jus}}
+%\end{center}
+
+
+%\begin{pspicture}(0,0)
+%\psline[linewidth=0.05,linecolor=black](2.75,0.8)(8.75,0.8)
+%\end{pspicture}
+
+\vspace{0.2cm}
+\begin{center}
+\rput(-5.5,0.23){\psvectorian[width=1.4cm]{119}}\\
+  \rput(-0.3,1){\Large{~~~~Tout est fait maison!}}
+\rput(5.5,1){\psvectorian[width=1.4cm,mirror]{119}}\\
+ 
+\end{center}
+
+
+\vspace{0.3cm}
+%\rput(12,4.2){\psvectorian[width=0.7cm]{174}}
+\begin{Group}{Jus de Fruits Frais}{\textbf{33 cl}}{---}{\textbf{50 cl}\hspace*{3mm}}\\
+
+\rput(1.5,1.9){\psvectorian[width=1.5cm]{174}}
+%\vspace{0.2cm}\\
+\Entryii{100\% Orange}{2 \euro}{---}{3 \euro}\\
+\Entryii{100\% Pomme}{2.50 \euro}{---}{3.50 \euro}\\
+\Entry{100\% Orange Plus}{2.50 \euro}{---}{3.50 \euro}\\
+\Expl{100\% Orange \textbf{+ 1 autre fruit}}\\
+\Entry{100\% Pomme Plus}{3 \euro}{---}{4.50 \euro}\\
+\Expl{100\% Pomme \textbf{+ 1 autre fruit}}\\
+
+\Entryii{Jus du Jour}{3.50 \euro}{---}{5.50 \euro}\\
+\Entry{Jus à la Carte}{4 \euro}{---}{6 \euro}\\
+\Expl{Jus avec les fruits que vous choisissez}\\
+
+
+
+
+\Entry{Citronnade}{1.50 \euro}{---}{2.50 \euro} \\
+\Expl{Citron, eau, menthe, sucre}\\
+\Entry{Th\'e glac\'e}{1.50 \euro}{---}{2.50 \euro} \\
+\Expl{Th\'e au jasmin, menthe, sucre}\\
+\end{Group}
+
+%\vspace{0.3cm}
+%\rput(5.5,-0.5){\psvectorian[width=1cm]{174}}\\
+
+
+%\Entry{100 \% Tomate}{1.5 \euro} \\
+%\Expl{Tomate, Céleri, Poivre}\\
+%\Entry{Gaspacho}{2 \euro} \\
+%\Expl{Tomate, Concombre, Poivron}\\
+
+
+%\\
+%~\\
+%~\\
+%~\\
+%\rput(5.3,0){\psvectorian[width=1.4cm]{8}}\\
+%~\\
+%~\\
+\vspace{1.2cm}
+\begin{Group}{Salade Végétarienne}{\textbf{Petite}}{---}{\textbf{Grande}}\\
+\rput(1.5,1.9){\psvectorian[width=2cm]{8}}
+\Entry{avec Pain \& Vinaigrette Maison}{4.50 \euro}{---}{6.50 \euro} \\
+\Expl{X\'erès-Moutarde---Basilic-Citron---Huile de Noix}\\
+%\Entry{-- Vinaigrette à la moutarde}{}{}{}\\
+%\Expl{Huile d'olive, vinaigre de X\'erès, moutarde}\\
+
+%\Entry{-- Vinaigrette à l'huile de noix}{}{}{}\\
+%\Expl{Huile de noix, huile d'arachide, vinaigre de cidre}\\
+
+%\Entry{-- Vinaigrette au basilic}{}{}{}\\
+%\Expl{Huilde d'olive, citron, basilic}\\
+
+%\Entry{La Salade de Fruits du Jour}{Petite:~2.5 \euro}\\
+%\Expl{Salade de fruit pr\'epar\'ee le matin, menthe et citron}{Grande:~4 \euro} \\
+%\Entry{La Petite Salade de Fruits du Jour}{1.5 \euro} \\
+%\Expl{Salade de 3 Fruits au choix}\\
+
+
+\end{Group}
+
+%\vspace{0.4cm}
+%\rput(5.7,0){\psvectorian[width=1.2cm]{8}}\\
+
+%\vspace{0.8cm}
+\rput(0.6,-2.2){\psvectorian[width=2.5cm]{167}}\\
+
+\begin{Group}{Dessert Fruité}{3.50 \euro}{---}{\hspace*{9.5mm} 5 \euro}\\
+
+\end{Group}
+
+\vspace{0.4cm}
+
+\begin{Group}{Cookie}{\hspace*{18.5mm}}{---}{\hspace*{9.5mm} 1 \euro}\\
+\end{Group}
+
+\begin{center}
+\rput(-5.5,0.23){\psvectorian[width=1.4cm]{119}}\\
+  \rput(-0.3,1){\Large{~~~~Tout est fait maison!}}
+\rput(5.5,1){\psvectorian[width=1.4cm,mirror]{119}}\\
+ \rput(-0.2,0.7){\it{{~~~~Vente à emporter uniquement}}}
+\end{center}
+
+
+\end{document}
